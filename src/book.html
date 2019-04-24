@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="crowdfunding of machine learning dataset">
+    <meta name="keywords" content="blockchain，ML">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>crowdfunding of machine learning dataset</title>
+    <link href="images/library.png" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pagination.css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+    <script type="text/javascript" src="js/pagination.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/web3.min.js"></script><!--core-->
+    <script type="text/javascript" src="app/truffle-contract.js"></script><!--core-->
+</head>
+
+<body>
+<div id="wrap">
+
+    <!--left menu bar-->
+    <script type="text/javascript" src="js/nav.js"></script>
+
+    <!--right content-->
+    <div id="rightContent">
+        <!--right content-->
+        <div role="tabpanel" class="tab-pane">
+            <!--top module-->
+
+            <!--main-->
+            <!-----data info top------->
+            <div class="panelContainer">
+                <img src="images/logo.png" width="450" height="270"/>
+                <div class="info" id="bookspage">
+                    <span id="id" hidden>0</span><!--template-->
+                    <span class="name" id="nameWriter"></span>
+                    <span class="btn-primary" id="style"></span>
+                    <p class="normal">：<samp id="score"></samp></p>
+                    <p class="normal">：<samp id="publisherPublishAge"></samp></p>
+                    <p class="normal">：<samp id="ISBN"></samp></p>
+                    <p class="normal">：<samp id="pages"></samp></p>
+                    <p class="normal">：<samp id="borrowNums"></samp></p>
+                    <p class="buy" id="bottonCentent">
+                        <button id="comment" data-toggle="modal" data-target="#modal"  style="background-color: red" onclick="App.set(10086)">Comment</button>
+                        <button onclick="window.location.href='library/bookHome.html'" style="background-color: #00bdef">Back</button>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+
+            <!---->
+            <p class="line"></p>
+
+            <!-----book info root------->
+            <div class="panelContainer">
+                <p>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <samp id="owner">0x413a1395f59324b7bbc5781d8dc4398dc4502790</samp>
+                <p>
+                    <span class="glyphicon glyphicon-time"></span>
+                    <samp id="date">2019-03-31</samp>
+                </p>
+
+                <p class="title" id="paneintro">Description</p>
+                <p id="intro">
+
+                </p>
+
+                <p class="title" id="panecomment">Comments(<samp id="books_comments_cnt">0</samp>)</p>
+                <div id="comments">
+                    <div class="row" hidden><!--template-->
+                        <div class="col-sm-1">
+                            <img src="images/buyer.png"/>
+                            <samp>***888</samp>
+                        </div>
+                        <div class="col-sm-11">
+                            <p>2019年04月15日 00:00</p>
+                            <p name="star" data-score="5"></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+            <!-----书籍详情下部分结束------->
+            <!--底部分页-->
+            <footer class="footer">
+                <div id="pagination"></div>
+            </footer>
+            <!--资讯评分-->
+            <div class="modal" id="modal" aria-labelledby="modalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel"></h5>
+                            <button type="button" class="close" data-dismiss="modal" id="cancel" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <form class="form-horizontal" id="starForm">
+                                    <div class="form-group">
+                                        <label for="star" class="col-xs-4 control-label">Grade</label>
+                                        <div class="col-xs-8">
+                                            <div name="star" id="star"></div>
+                                            <span id="hint"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="content" class="col-xs-4 control-label">Comment</label>
+                                        <div class="col-xs-8">
+                                            <textarea rows="3" name="content" id="content"
+                                                      class="form-control input-sm duiqi"></textarea>
+                                            <span class="error"></span> <!-- error字数限制 -->
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-xs btn-default" id="cancel" data-dismiss="modal">cancel</button>
+                            <button class="btn btn-xs btn-danger" onclick="App.bookevaluate()" id="starBooksBtn">commit</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+            </div><!--右侧内容栏-->
+        </div><!--右侧内容栏-->
+    </div>
+</div>
+<script type="text/javascript" src="app/book.js"></script><!--core-->
+</body>
+</html>

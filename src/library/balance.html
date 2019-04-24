@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="crowdfunding of machine learning dataset">
+    <meta name="keywords" content="blockchain，ML">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>crowdfunding of machine learning dataset</title>
+    <link href="images/library.png" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <script type="text/javascript" src="app/web3.min.js"></script><!--core-->
+    <script type="text/javascript" src="app/truffle-contract.js"></script><!--core-->
+    <script type="text/javascript" src="app/ipfs.js"></script><!--core-->
+</head>
+
+<style type="text/css">
+    .error {
+        font-weight: bold;
+        padding-left: 16px;
+        color: #5bff12;
+    }
+</style>
+
+<body>
+<div id="wrap">
+    <!--左侧菜单栏-->
+    <script type="text/javascript" src="js/nav.js"></script>
+    <!--右侧内容栏-->
+    <div id="rightContent">
+        <!--右侧内容栏-->
+        <div role="tabpanel" class="tab-pane">
+            <!--发布任务-->
+            <div class="center-block" style="background-color: #fff;width: 600px;padding: 50px 0;margin: 50px auto;">
+                <div class="data-div">
+                    <div class="row" id="bbalance">
+                        <div class="col-xs-5">
+                            <button type="button" class="btn btn-gray btn-xs" style="right:200px;height: 200px" onclick="App.getBalance()">Update</button>
+                        </div>
+                        <div class="col-sm-6 col-md-3" ><!--template-->
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <span class="label label-info">Balance</span>
+                                    <samp id="sscore">"App.getBooks()"</samp>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!--右侧内容栏-->
+    </div><!--右侧内容栏-->
+</div>
+<script type="text/javascript" src="app/balance.js"></script><!--core-->
+</body>
